@@ -1,0 +1,111 @@
+1.
+epoch: 48
+train loss: 0.3600 loss_neg: 4.8092 loss_pos: 4.8355
+valid loss: 0.5518 valid Acc: 0.84 valid AUC: 0.9355
+test loss : 0.5887 test Acc : 0.82 test AUC : 0.8676
+
+m=0.99
+
+encoder = CCT_UDE(
+    img_size=(224, 224, 12),
+    embedding_dim=768,
+    n_conv_layers=4,
+    kernel_size=(7, 7, 1),
+    stride=(2, 2, 1),
+    padding=(3, 3, 0),
+    pooling_kernel_size=(3, 3, 1),
+    pooling_stride=(2, 2, 1),
+    pooling_padding=(1, 1, 0),
+    num_layers=8,
+    num_heads=6,
+    mlp_radio=2.,
+    num_classes=2,
+    CL_dim=64,
+    positional_embedding='none',  # ['sine', 'learnable', 'none']
+)
+
+momentum_encoder = CCT_UDE(
+    img_size=(224, 224, 12),
+    embedding_dim=768,
+    n_conv_layers=4,
+    kernel_size=(7, 7, 1),
+    stride=(2, 2, 1),
+    padding=(3, 3, 0),
+    pooling_kernel_size=(3, 3, 1),
+    pooling_stride=(2, 2, 1),
+    pooling_padding=(1, 1, 0),
+    num_layers=8,
+    num_heads=6,
+    mlp_radio=2.,
+    num_classes=2,
+    CL_dim=64,
+    positional_embedding='none',  # ['sine', 'learnable', 'none']
+)
+
+train_batch = 24
+valid_batch = 24
+test_batch = 24
+sample_rate = 0.25
+time_steps = 12
+number_classes = 1
+threshold = 0.3
+Epoch = 1000
+num_keys = 576
+start_up_lr = 1e-4
+lr_ = start_up_lr / 10
+loss_fn = nn.CrossEntropyLoss()
+
+aug_list = [('GaussianBlur', 0.3), ('AddGaussianNoise', 0.3), ('RandomHorizontalFlip', 0.5)]
+
+2.
+
+encoder = CCT_UDE(
+    img_size=(224, 224, 12),
+    embedding_dim=768,
+    n_conv_layers=4,
+    kernel_size=(7, 7, 1),
+    stride=(2, 2, 1),
+    padding=(3, 3, 0),
+    pooling_kernel_size=(3, 3, 1),
+    pooling_stride=(2, 2, 1),
+    pooling_padding=(1, 1, 0),
+    num_layers=6,
+    num_heads=4,
+    mlp_radio=2.,
+    num_classes=2,
+    CL_dim=64,
+    positional_embedding='none',  # ['sine', 'learnable', 'none']
+)
+
+momentum_encoder = CCT_UDE(
+    img_size=(224, 224, 12),
+    embedding_dim=768,
+    n_conv_layers=4,
+    kernel_size=(7, 7, 1),
+    stride=(2, 2, 1),
+    padding=(3, 3, 0),
+    pooling_kernel_size=(3, 3, 1),
+    pooling_stride=(2, 2, 1),
+    pooling_padding=(1, 1, 0),
+    num_layers=6,
+    num_heads=4,
+    mlp_radio=2.,
+    num_classes=2,
+    CL_dim=64,
+    positional_embedding='none',  # ['sine', 'learnable', 'none']
+)
+
+train_batch = 24
+valid_batch = 24
+test_batch = 24
+sample_rate = 0.25
+time_steps = 12
+number_classes = 1
+threshold = 0.3
+Epoch = 1000
+num_keys = 256
+start_up_lr = 1e-4
+lr_ = start_up_lr / 10
+loss_fn = nn.CrossEntropyLoss()
+
+aug_list = [('GaussianBlur', 0.3), ('AddGaussianNoise', 0.3), ('RandomHorizontalFlip', 0.5)]
