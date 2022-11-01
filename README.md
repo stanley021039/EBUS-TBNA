@@ -1,4 +1,8 @@
 # EBUS-TBNA
+## 事前準備
+請先在terminal進入資料夾後，啟動虛擬環境
+啟動虛擬環境指令: source EBUS_env/bin/activate
+
 ## Models
 模型code在資料夾'models'，包含：
 ### 2D
@@ -19,6 +23,7 @@
  - TransEBUS-TS-MoCo-ClsT
 
 ## Training & testing models
+訓練用的code在最外層資料夾，但個別模型的資料夾內亦有一個備份
 1. 若要重新訓練模型，直接在terminal輸入對應的指令
 2. 若要重現測試結果，需先在訓練程式中更改'is_training'的參數至0(如下圖)，再輸入對應指令 
 ![image](https://github.com/stanley021039/EBUS-TBNA/blob/main/%E6%93%B7%E5%8F%96.PNG)
