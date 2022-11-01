@@ -47,7 +47,7 @@
 
 ## GradCam 可視化 (TransEBUS-TS-MoCo)
 1. 重新生成關注區域熱點圖前，請先建立以下資料夾：
->savemodelxxxxxx
+>savemodel220726_TransEBUS_TS_MoCo
 >>gradcam  
 >>>TP (真陽性的熱點圖)  
 >>>TN (真陰性的熱點圖)  
