@@ -1,6 +1,6 @@
 # EBUS-TBNA
 ## Models
-The codes of models are in folder 'models'.
+模型code在資料夾'models'，包含：
 ### 2D
  - VGG-19
  - Resnet-50
@@ -19,27 +19,27 @@ The codes of models are in folder 'models'.
  - TransEBUS-TS-MoCo-ClsT
 
 ## Training & testing models
-1. These codes are the default codes for training. If you want to re-train the model, just enter the appropriate command below.  
-If you want to reproduce the testing result, please change the value of the parameter 'is_training' into '0' as follow:  
+1. 若要重新訓練模型，直接在terminal輸入對應的指令
+2. 若要重現測試結果，需先在訓練程式中更改'is_training'的參數至0(如下圖)，再輸入對應指令 
 ![image](https://github.com/stanley021039/EBUS-TBNA/blob/main/%E6%93%B7%E5%8F%96.PNG)
-2. If the folder does not exist, create the folder tree as follows: 
+3. 如果沒有用於儲存模型結果的資料夾，請依以下方式建立資料夾：
 >savemodelxxxxxx
 >>confusion_matrix  
 >>Roc_curve  
 >>model_state_dict
 
-|  Model   | Command |
-|  :----  | :----  |
-| VGG-19  | python3 train_VGG19.py |
-| Resnet-50  | python3 train_Res50.py |
-| EBUSNet  | python3 train_EBUSNet.py |
-| CNN-LSTM  | python3 train_CNNLSTM.py |
-| CNN-LSTM-TS  | python3 train_CNNLSTM_TS.py |
-| R3D  | python3 train_R3D.py |
-| R3D-TS  | python3 train_R3D_TS.py |
-| ViT-3D  | python3 train_ViT_3D.py |
-| TransEBUS  | python3 train_TransEBUS.py |
-| TransEBUS-TS  | python3 train_TransEBUS_TS.py |
-| TransEBUS-TS-MoCo  | python3 train_TransEBUS_TS_MoCo.py |
-| TransEBUS-3S-MoCo  | python3 train_TransEBUS_3S_MoCo.py |
-| TransEBUS-TS-MoCo-ClsT  | python3 train_TransEBUS_TS_MoCo_ClsT.py |
+|  Model   | Command | Savedir |
+|  :----  | :----  | :---- |
+| VGG-19  | python3 train_VGG19.py | savemodel220620_VGG19 |
+| Resnet-50  | python3 train_Res50.py | savemodel220621_Res50 |
+| EBUSNet  | python3 train_EBUSNet.py | savemodel220620_EBUSnet |
+| CNN-LSTM  | python3 train_CNNLSTM.py | savemodel220627_CNNLSTM |
+| CNN-LSTM-TS  | python3 train_CNNLSTM_TS.py | savemodel220628_CNNLSTM_TS |
+| R3D  | python3 train_R3D.py | savemodel220602_R3D |
+| R3D-TS  | python3 train_R3D_TS.py | savemodel220609_R3D_TS |
+| ViT-3D  | python3 train_ViT_3D.py | savemodel220709_ViT_3D |
+| TransEBUS  | python3 train_TransEBUS.py | savemodel220921_TransEBUS |
+| TransEBUS-TS  | python3 train_TransEBUS_TS.py | savemodel220921_TransEBUS_TS |
+| TransEBUS-TS-MoCo  | python3 train_TransEBUS_TS_MoCo.py | savemodel220726_TransEBUS_TS_MoCo |
+| TransEBUS-3S-MoCo  | python3 train_TransEBUS_3S_MoCo.py | savemodel221017_TransEBUS_3S_MoCo |
+| TransEBUS-TS-MoCo-ClsT  | python3 train_TransEBUS_TS_MoCo_ClsT.py | savemodel221014_TransEBUS_TS_MoCo_clsT |
