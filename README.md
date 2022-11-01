@@ -43,7 +43,26 @@
 | TransEBUS-TS-MoCo  | python3 train_TransEBUS_TS_MoCo.py | savemodel220726_TransEBUS_TS_MoCo |
 | TransEBUS-3S-MoCo  | python3 train_TransEBUS_3S_MoCo.py | savemodel221017_TransEBUS_3S_MoCo |
 | TransEBUS-TS-MoCo-ClsT  | python3 train_TransEBUS_TS_MoCo_ClsT.py | savemodel221014_TransEBUS_TS_MoCo_clsT |
+| Clinical physician  | python3 physician_pred.py | - |
 
+## GradCam 可視化 (TransEBUS-TS-MoCo)
+1. 重新生成關注區域熱點圖前，請先建立以下資料夾：
+>savemodelxxxxxx
+>>gradcam  
+>>>TP (真陽性的熱點圖)
+>>>TN (真陰性的熱點圖)
+>>>FP (偽陽性的熱點圖)
+>>>FN (偽陰性的熱點圖)
+>>>ori (對應之灰階影像)
 
 ## Results
 1.	各模型的比較  
+![image](https://github.com/stanley021039/EBUS-TBNA/blob/main/Results/result1.png)
+2. 雙流模塊的比較
+![image](https://github.com/stanley021039/EBUS-TBNA/blob/main/Results/result2.png)
+3. 對比學習的比較
+![image](https://github.com/stanley021039/EBUS-TBNA/blob/main/Results/result3.png)
+4. 額外消融測試
+![image](https://github.com/stanley021039/EBUS-TBNA/blob/main/Results/result4.png)
+5. GradCam++ 可視化
+
