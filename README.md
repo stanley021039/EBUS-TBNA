@@ -43,3 +43,7 @@
 | TransEBUS-TS-MoCo  | python3 train_TransEBUS_TS_MoCo.py | savemodel220726_TransEBUS_TS_MoCo |
 | TransEBUS-3S-MoCo  | python3 train_TransEBUS_3S_MoCo.py | savemodel221017_TransEBUS_3S_MoCo |
 | TransEBUS-TS-MoCo-ClsT  | python3 train_TransEBUS_TS_MoCo_ClsT.py | savemodel221014_TransEBUS_TS_MoCo_clsT |
+
+
+## Results
+1.	各模型的比較  
