@@ -1,6 +1,6 @@
 # EBUS-TBNA
 ## 事前準備
-請先在terminal進入資料夾後，啟動虛擬環境
+請先在terminal進入資料夾後，啟動虛擬環境  
 啟動虛擬環境指令: source EBUS_env/bin/activate
 
 ## Models
