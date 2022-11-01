@@ -54,7 +54,7 @@
 >>>FP (偽陽性的熱點圖)
 >>>FN (偽陰性的熱點圖)
 >>>ori (對應之灰階影像)
-2. C
+2. Command: GradCam.py
 
 ## Results
 1.	各模型的比較  
