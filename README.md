@@ -58,11 +58,12 @@
 ## Results
 1.	各模型的比較  
 ![image](https://github.com/stanley021039/EBUS-TBNA/blob/main/Results/result1.png)
-2. 雙流模塊的比較
+2. 雙流模塊的比較  
 ![image](https://github.com/stanley021039/EBUS-TBNA/blob/main/Results/result2.png)
-3. 對比學習的比較
+3. 對比學習的比較  
 ![image](https://github.com/stanley021039/EBUS-TBNA/blob/main/Results/result3.png)
-4. 額外消融測試
+4. 額外消融測試  
 ![image](https://github.com/stanley021039/EBUS-TBNA/blob/main/Results/result4.png)
-5. GradCam++ 可視化
-
+5. GradCam++ 可視化  
+![image](https://github.com/stanley021039/EBUS-TBNA/blob/main/Results/GradCam_T.png)  
+![image](https://github.com/stanley021039/EBUS-TBNA/blob/main/Results/GradCam_F.png)  
