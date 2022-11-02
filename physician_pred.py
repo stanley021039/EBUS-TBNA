@@ -3,7 +3,7 @@ import numpy as np
 from utils import Roc_curve
 from utils import plot_confusion_matrix_and_scores
 
-exc = pd.read_excel('physician_exc_0705.xls', sheet_name='測試資料(50筆)')
+exc = pd.read_excel('data_physician.xls', sheet_name='測試資料(50筆)')
 hist = np.zeros((2, 2))
 threshold = 4
 y_true = []

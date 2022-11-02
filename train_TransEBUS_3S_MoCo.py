@@ -21,7 +21,21 @@ from utils import plot_confusion_matrix_and_scores, Roc_curve, plot_fig, cosine_
 import random
 from thop import profile
 
-save_dir = 'savemodel221017_TransEBUS_3S_MoCo'
+parser = argparse.ArgumentParser()
+parser.add_argument("--train", default=False, type=int, help="re-train the model")
+parser.add_argument("--test", default=True, type=int, help="reproduce the testing result")
+parser.add_argument("--save_dir", default='savemodel221017_TransEBUS_3S_MoCo', type=str, help="assign save folder")
+args = parser.parse_args()
+
+save_dir = args.save_dir
+if not os.path.isdir(save_dir):
+    os.mkdir(save_dir)
+if not os.path.isdir(save_dir + '/confusion_matrix'):
+    os.mkdir(save_dir + '/confusion_matrix')
+if not os.path.isdir(save_dir + '/Roc_curve'):
+    os.mkdir(save_dir + '/Roc_curve')
+if not os.path.isdir(save_dir + '/model_state_dict'):
+    os.mkdir(save_dir + '/model_state_dict')
 
 seed = 42
 torch.manual_seed(seed)
@@ -431,8 +445,8 @@ min_loss = 100
 best_epoch = 39
 
 # Main
-is_training = 1
-is_testing = 1
+is_training = args.train
+is_testing = args.test
 
 if is_training:
     f = open(save_dir + "/epoch_log.txt", 'w')

@@ -19,7 +19,21 @@ import seaborn as sns
 from math import cos, pi
 from utils import plot_confusion_matrix_and_scores, Roc_curve, plot_fig, cosine_decay
 
-save_dir = 'savemodel220609_R3D_TS'
+parser = argparse.ArgumentParser()
+parser.add_argument("--train", default=False, type=int, help="re-train the model")
+parser.add_argument("--test", default=True, type=int, help="reproduce the testing result")
+parser.add_argument("--save_dir", default='savemodel220609_R3D_TS', type=str, help="assign save folder")
+args = parser.parse_args()
+
+save_dir = args.save_dir
+if not os.path.isdir(save_dir):
+    os.mkdir(save_dir)
+if not os.path.isdir(save_dir + '/confusion_matrix'):
+    os.mkdir(save_dir + '/confusion_matrix')
+if not os.path.isdir(save_dir + '/Roc_curve'):
+    os.mkdir(save_dir + '/Roc_curve')
+if not os.path.isdir(save_dir + '/model_state_dict'):
+    os.mkdir(save_dir + '/model_state_dict')
 
 # random seed setting
 torch.manual_seed(42)
@@ -269,8 +283,8 @@ max_acc = 0
 best_epoch = 16
 
 # Main
-is_training = 1
-is_testing = 1
+is_training = args.train
+is_testing = args.test
 
 if is_training:
     TrainingDataset = Dataset3D('data_lesion_0524', 'data_lesion_0524.xlsx', 'data/two_stream_data_old/UD_clip', doppler=True, elastography=True,
