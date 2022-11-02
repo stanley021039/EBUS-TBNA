@@ -1,4 +1,8 @@
 # EBUS-TBNA
+## 事前準備
+請先在terminal進入資料夾後，啟動虛擬環境  
+啟動虛擬環境指令: source EBUS_env/bin/activate
+
 ## Models
 模型code在資料夾'models'，包含：
 ### 2D
@@ -19,15 +23,17 @@
  - TransEBUS-TS-MoCo-ClsT
 
 ## Training & testing models
-1. 若要重新訓練模型，直接在terminal輸入對應的指令
-2. 若要重現測試結果，需先在訓練程式中更改'is_training'的參數至0(如下圖)，再輸入對應指令 
-![image](https://github.com/stanley021039/EBUS-TBNA/blob/main/%E6%93%B7%E5%8F%96.PNG)
-3. 如果沒有用於儲存模型結果的資料夾，請依以下方式建立資料夾：
->savemodelxxxxxx
->>confusion_matrix  
->>Roc_curve  
->>model_state_dict
+訓練用的code在最外層資料夾，但個別模型的資料夾內亦有一個備份，儲存的模型資料夾內容為
+>savemodelYYMMDD_xxx  
+>>confusion_matrix (每個epoch的混淆矩陣，包含以clip為單位(train_v_xx.jpg)、以病灶為單位(train_l_xx.jpg))  
+>>model_state_dict (對應epoch的權重)  
+>>Roc_curve (每個epoch的Roc curve，包含以clip為單位(train_v_xx.jpg)、以病灶為單位(train_l_xx.jpg))  
+1. 重現測試結果指令範例：  
+python3 train_TransEBUS_TS_MoCo.py
+2. 重新訓練模型指令範例：  
+python3 train_TransEBUS_TS_MoCo.py --train 1
 
+以下為各模型對應的測試指令與默認儲存的資料夾
 |  Model   | Command | Savedir |
 |  :----  | :----  | :---- |
 | VGG-19  | python3 train_VGG19.py | savemodel220620_VGG19 |
@@ -46,23 +52,25 @@
 | Clinical physician  | python3 physician_pred.py | - |
 
 ## GradCam 可視化 (TransEBUS-TS-MoCo)
-1. 重新生成關注區域熱點圖前，請先建立以下資料夾：
->savemodelxxxxxx
+1. 重新生成關注區域熱點圖指令 python3 GradCam.py
+2. 儲存資料夾內容如下
+>savemodel220726_TransEBUS_TS_MoCo
 >>gradcam  
->>>TP (真陽性的熱點圖)
->>>TN (真陰性的熱點圖)
->>>FP (偽陽性的熱點圖)
->>>FN (偽陰性的熱點圖)
->>>ori (對應之灰階影像)
+>>>TP (真陽性的熱點圖)  
+>>>TN (真陰性的熱點圖)  
+>>>FP (偽陽性的熱點圖)  
+>>>FN (偽陰性的熱點圖)  
+>>>ori_ (對應之灰階影像)
 
 ## Results
 1.	各模型的比較  
 ![image](https://github.com/stanley021039/EBUS-TBNA/blob/main/Results/result1.png)
-2. 雙流模塊的比較
+2. 雙流模塊的比較  
 ![image](https://github.com/stanley021039/EBUS-TBNA/blob/main/Results/result2.png)
-3. 對比學習的比較
+3. 對比學習的比較  
 ![image](https://github.com/stanley021039/EBUS-TBNA/blob/main/Results/result3.png)
-4. 額外消融測試
+4. 額外消融測試  
 ![image](https://github.com/stanley021039/EBUS-TBNA/blob/main/Results/result4.png)
-5. GradCam++ 可視化
-
+5. GradCam++ 可視化  
+![image](https://github.com/stanley021039/EBUS-TBNA/blob/main/Results/GradCam_T.png)  
+![image](https://github.com/stanley021039/EBUS-TBNA/blob/main/Results/GradCam_F.png)  
